@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Are you sure?</title>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'courses/style.css' %}">
+	</head>
+	<body>
+		<h3>Are you sure you want to delete the following course?</h3>
+			<p>Name: {{ course.course_name }}</p>
+			<p>Description: {{ course.description }}</p>
+			<button><a href="/">Noooooo!</a></button>
+			<button><a href="/delete/{{course.id}}">Yes! I want to delete this</a></button>
+	</body>
+</html>

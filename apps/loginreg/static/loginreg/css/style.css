@@ -1,0 +1,35 @@
+* {
+	font-family: sans-serif;
+}
+#form_reg {
+	padding:50px;
+	border: 1px solid black;
+	width: 500px;
+	clear: both;
+	box-sizing: border-box;
+	height: auto;
+	margin: 50px;
+}
+#form_reg label, #form_log label {
+	text-align: left;
+	margin: 10px;
+}
+#form_reg input, #form_log input {
+	float: right;
+}
+#form_log {
+	padding:50px;
+	border: 1px solid black;
+	width: 500px;
+	clear: both;
+	box-sizing: border-box;
+	height: auto;
+	margin: 50px;
+}
+.alert {
+	color: red;
+	font-size: 14px;
+}
+.success {
+	color: green;
+}
