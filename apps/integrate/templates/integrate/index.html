@@ -37,6 +37,12 @@
 			</tr>
 			{% endfor %}
 		</table>
+		{% for course in courses  %}
+			<p>
+				{{course.course_name}}
+				course has {{course.courseusers}} users!
+			</p>
+		{% endfor %}
 		<a href="{% url 'index' %}">< Return Home</a>
 	</body>
 </html>

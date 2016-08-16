@@ -6,8 +6,7 @@ from ..courses.models import Course
 
 # Create your models here.
 class Add_User(models.Model):
-	user = models.ForeignKey(User)
-	course = models.ForeignKey(Course)
+	user = models.ForeignKey(User, related_name="users")
+	course = models.ForeignKey(Course, related_name="courses")
 	created_at = models.DateTimeField(auto_now_add = True)
 	updated_at = models.DateTimeField(auto_now = True)
-	

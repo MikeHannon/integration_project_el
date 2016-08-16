@@ -19,31 +19,30 @@ def login(request):
 	return render(request, "loginreg/index.html", context)
 
 def new_user(request):
+	""" Name stuff consistently! """
 	context = {
-		'courses': Course.objects.all(),
+		'courses': Course.objects.all().annotate(courseusers = Count("courses")),
 		'users': User.objects.all()
 		}
 	return render(request, "integrate/index.html", context)
 
 def add_new(request):
+	""" What are you doing with this context object?
+
 	context = {
 		'courses': Course.objects.all().annotate(usercourse=Count('add_user__user')),
 		'users': User.objects.all()
 		}
+	"""
 	user = User.objects.get(id=request.POST['userid'])
 	course = Course.objects.get(id=request.POST['courseid'])
-	# print user.id
-	# print course.id
-	# new_user = Add_User.objects.create(course_id=course.id, user_id=user.id)
-	# print taken_courses
-	# for my_id in context['courses']:
-	# 	# print my_id.id
-	# 	taken_courses = Add_User.objects.filter(course_id=my_id.id)
+	"""
+	add a user to course
+	"""
+	Add_User.objects.create(course_id=course.id, user_id=user.id)
+	"""
+	printed all added users here.
+	"""
+	print Add_User.objects.all()
 
-	# 	print len(taken_courses)
-
-	# print context['courses'][0].id
-	# print new_user
-	# get a count of users per course
-		# show added count in number of users column
 	return redirect('/add_user')
